@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+        <style>
+        form {
+                margin: auto;
+                width: 35%;
+        }
+        .result {
+                margin: auto;
+                width: 35%;
+                border: 1px solid #ccc;
+        }
+        </style>
+        <head>
+        <title> Demo Classification </title>
+        </head>
+        
+        <form action="{{ url_for('main') }}" method="POST">
+    <fieldset>
+        <legend>Input values:</legend>
+        Store:
+        <input name="store" required>
+        <br>
+        <br> 
+        Day of Week:
+        <input name="dayOfWeek" required>
+        <br>
+        <br> 
+        Date:
+        <input name="date" required>
+        <br>
+        <br> 
+        Customers:
+        <input name="customers" required>
+        <br>
+        <br>
+        Open:
+        <input name="open" required>
+        <br>
+        <br> 
+        Promo:
+        <input name="promo" required>
+        <br>
+        <br> 
+        State Holiday:
+        <input name="stateHoliday" required>
+        <br>
+        <br>
+        School Holiday:
+        <input name="schoolHoliday" required>
+        <br>
+        <br>
+        <input type="submit">
+    </fieldset>
+</form>
+<br>
+<div class="result" align="center">
+    {% if result %}
+        {% for variable, value in original_input.items() %}
+            <b>{{ variable }}</b> : {{ value }}
+        {% endfor %}
+        <br>
+        <br> Predicted number of Sakes:
+           <p style="font-size:50px">{{ result }}</p>
+    {% endif %}
+</div>
+
+</html>
