@@ -5,7 +5,7 @@ import pandas as pd
 import os
 from datetime import datetime
 
-fn = './model/modelmk06.pkl'
+fn = './model/modelmk07.pkl'
 model_instance = pickle.load(open(fn,'rb'))
 
 app = flask.Flask(__name__, template_folder='pages')
